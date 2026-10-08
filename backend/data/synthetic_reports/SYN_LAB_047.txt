@@ -1,0 +1,8 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_047
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+Fasting Blood Glucose  148     mg/dL      Ref: (70 - 99) HIGH
+Triglycerides          45      mg/dL      Ref: (50 - 150) LOW
+Total Cholesterol      175     mg/dL      Ref: (125 - 200) NORMAL
+TSH                    2.1     µIU/mL     Ref: (0.4 - 4.0) NORMAL

@@ -1,0 +1,12 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_021
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+Total Cholesterol      175     mg/dL      Ref: (125 - 200) NORMAL
+Fasting Blood Glucose  88      mg/dL      Ref: (70 - 99) NORMAL
+SGPT / ALT             28      U/L        Ref: (7 - 56) NORMAL
+TSH                    2.1     µIU/mL     Ref: (0.4 - 4.0) NORMAL
+Triglycerides          115     mg/dL      Ref: (50 - 150) NORMAL
+
+RECOMMENDATION:
+Follow-up consultation after 2 weeks.

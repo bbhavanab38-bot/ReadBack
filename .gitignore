@@ -1,0 +1,44 @@
+# Python virtual environments
+venv/
+.venv/
+backend/venv/
+backend/.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# Node
+node_modules/
+frontend/node_modules/
+
+# Frontend build
+frontend/dist/
+dist/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Runtime databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Runtime uploads
+uploads/
+backend/uploads/
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

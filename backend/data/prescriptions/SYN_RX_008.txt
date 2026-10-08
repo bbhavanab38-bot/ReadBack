@@ -1,0 +1,9 @@
+SYNTHETIC CLINIC OUTPATIENT PRESCRIPTION #SYN_RX_008
+Attending: Dr. Synthetic MD   Date: 2026-10-02
+Rx Medication Orders:
+--------------------------------------------------
+1. Tab. Amlodipine 2.5 mg - once daily for 30 days
+2. Tab. Amoxicillin 250 mg - twice daily for 30 days
+
+Directions: Take medication after food.
+Follow-up: Review after 1 month with treating physician.

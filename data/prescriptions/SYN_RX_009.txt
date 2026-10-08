@@ -1,0 +1,9 @@
+SYNTHETIC CLINIC OUTPATIENT PRESCRIPTION #SYN_RX_009
+Attending: Dr. Synthetic MD   Date: 2026-10-02
+Rx Medication Orders:
+--------------------------------------------------
+1. Tab. Lisinopril 5 mg - once daily in morning for 30 days
+2. Tab. Amlodipine 5 mg - once daily for 30 days
+
+Directions: Avoid consuming milk or dairy within 2 hours of this dose.
+Follow-up: Consult Cardiologist after 1 week.

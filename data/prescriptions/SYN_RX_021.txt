@@ -1,0 +1,10 @@
+SYNTHETIC CLINIC OUTPATIENT PRESCRIPTION #SYN_RX_021
+Attending: Dr. Synthetic MD   Date: 2026-10-02
+Rx Medication Orders:
+--------------------------------------------------
+1. Tab. Pantoprazole 40 mg - once daily before breakfast for 30 days
+2. Tab. Atorvastatin 20 mg - once daily at bedtime for 30 days
+3. Tab. Lisinopril 10 mg - once daily in morning for 30 days
+
+Directions: Avoid consuming milk or dairy within 2 hours of this dose.
+Follow-up: Repeat Fasting Blood Glucose in 3 months.

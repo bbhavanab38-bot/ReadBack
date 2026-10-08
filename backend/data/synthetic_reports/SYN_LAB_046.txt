@@ -1,0 +1,12 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_046
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+SGPT / ALT             28      U/L        Ref: (7 - 56) NORMAL
+HbA1c                  5.2     %          Ref: (4.0 - 5.6) NORMAL
+TSH                    0.15    µIU/mL     Ref: (0.4 - 4.0) LOW
+Triglycerides          45      mg/dL      Ref: (50 - 150) LOW
+Hemoglobin             14.2    g/dL       Ref: (12.0 - 16.0) NORMAL
+
+RECOMMENDATION:
+Consult Cardiologist after 1 week.

@@ -1,0 +1,10 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_035
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+Total Cholesterol      175     mg/dL      Ref: (125 - 200) NORMAL
+Triglycerides          115     mg/dL      Ref: (50 - 150) NORMAL
+TSH                    7.8     µIU/mL     Ref: (0.4 - 4.0) HIGH
+
+RECOMMENDATION:
+Review after 1 month with treating physician.

@@ -1,0 +1,9 @@
+SYNTHETIC CLINIC OUTPATIENT PRESCRIPTION #SYN_RX_007
+Attending: Dr. Synthetic MD   Date: 2026-10-02
+Rx Medication Orders:
+--------------------------------------------------
+1. Tab. Amlodipine 10 mg - once daily for 30 days
+2. Tab. Metformin 1000 mg - twice daily for 30 days
+3. Tab. Levothyroxine 50 mcg - once daily in morning on empty stomach for 30 days
+
+Directions: Avoid consuming milk or dairy within 2 hours of this dose.

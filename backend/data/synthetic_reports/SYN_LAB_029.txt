@@ -1,0 +1,8 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_029
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+TSH                    2.1     µIU/mL     Ref: (0.4 - 4.0) NORMAL
+Platelets              95000   cells/µL   Ref: (150000 - 450000) LOW
+HbA1c                  5.2     %          Ref: (4.0 - 5.6) NORMAL
+Fasting Blood Glucose  88      mg/dL      Ref: (70 - 99) NORMAL

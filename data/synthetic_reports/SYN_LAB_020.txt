@@ -1,0 +1,9 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_020
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+Hemoglobin             14.2    g/dL       Ref: (12.0 - 16.0) NORMAL
+Fasting Blood Glucose  88      mg/dL      Ref: (70 - 99) NORMAL
+WBC                    3200    cells/µL   Ref: (4000 - 11000) LOW
+SGPT / ALT             28      U/L        Ref: (7 - 56) NORMAL
+Platelets              260000  cells/µL   Ref: (150000 - 450000) NORMAL

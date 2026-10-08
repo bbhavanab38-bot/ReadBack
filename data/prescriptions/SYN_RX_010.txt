@@ -1,0 +1,10 @@
+SYNTHETIC CLINIC OUTPATIENT PRESCRIPTION #SYN_RX_010
+Attending: Dr. Synthetic MD   Date: 2026-10-02
+Rx Medication Orders:
+--------------------------------------------------
+1. Tab. Levothyroxine 50 mcg - once daily in morning on empty stomach for 30 days
+2. Tab. Amlodipine 10 mg - once daily for 30 days
+3. Tab. Lisinopril 10 mg - once daily in morning for 30 days
+
+Directions: Take medication after food.
+Follow-up: Follow-up consultation after 2 weeks.

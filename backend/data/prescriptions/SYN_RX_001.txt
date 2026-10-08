@@ -1,0 +1,9 @@
+SYNTHETIC CLINIC OUTPATIENT PRESCRIPTION #SYN_RX_001
+Attending: Dr. Synthetic MD   Date: 2026-10-02
+Rx Medication Orders:
+--------------------------------------------------
+1. Tab. Levothyroxine 25 mcg - once daily in morning on empty stomach for 30 days
+2. Tab. Metformin 1000 mg - once daily for 30 days
+
+Directions: Do not drink alcohol during treatment.
+Follow-up: Consult Cardiologist after 1 week.

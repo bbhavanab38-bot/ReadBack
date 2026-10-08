@@ -1,0 +1,12 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_048
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+SGPT / ALT             6       U/L        Ref: (7 - 56) LOW
+Serum Creatinine       1.0     mg/dL      Ref: (0.7 - 1.3) NORMAL
+WBC                    7500    cells/µL   Ref: (4000 - 11000) NORMAL
+TSH                    2.1     µIU/mL     Ref: (0.4 - 4.0) NORMAL
+Total Cholesterol      175     mg/dL      Ref: (125 - 200) NORMAL
+
+RECOMMENDATION:
+Consult Cardiologist after 1 week.

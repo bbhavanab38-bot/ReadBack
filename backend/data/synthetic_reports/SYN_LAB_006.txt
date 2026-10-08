@@ -1,0 +1,12 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_006
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+Fasting Blood Glucose  62      mg/dL      Ref: (70 - 99) LOW
+WBC                    14200   cells/µL   Ref: (4000 - 11000) HIGH
+Hemoglobin             17.5    g/dL       Ref: (12.0 - 16.0) HIGH
+Serum Creatinine       2.4     mg/dL      Ref: (0.7 - 1.3) HIGH
+Triglycerides          115     mg/dL      Ref: (50 - 150) NORMAL
+
+RECOMMENDATION:
+Consult Cardiologist after 1 week.

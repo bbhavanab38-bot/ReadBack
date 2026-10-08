@@ -1,0 +1,11 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_045
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+TSH                    2.1     µIU/mL     Ref: (0.4 - 4.0) NORMAL
+Serum Creatinine       1.0     mg/dL      Ref: (0.7 - 1.3) NORMAL
+SGPT / ALT             28      U/L        Ref: (7 - 56) NORMAL
+Triglycerides          210     mg/dL      Ref: (50 - 150) HIGH
+
+RECOMMENDATION:
+Review after 1 month with treating physician.

@@ -1,0 +1,11 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_039
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+Platelets              260000  cells/µL   Ref: (150000 - 450000) NORMAL
+WBC                    7500    cells/µL   Ref: (4000 - 11000) NORMAL
+TSH                    2.1     µIU/mL     Ref: (0.4 - 4.0) NORMAL
+Total Cholesterol      245     mg/dL      Ref: (125 - 200) HIGH
+
+RECOMMENDATION:
+Repeat Fasting Blood Glucose in 3 months.

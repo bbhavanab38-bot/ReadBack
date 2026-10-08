@@ -1,0 +1,10 @@
+SYNTHETIC CLINIC OUTPATIENT PRESCRIPTION #SYN_RX_030
+Attending: Dr. Synthetic MD   Date: 2026-10-02
+Rx Medication Orders:
+--------------------------------------------------
+1. Tab. Pantoprazole 40 mg - once daily before breakfast for 30 days
+2. Tab. Amoxicillin 500 mg - twice daily for 30 days
+3. Tab. Amlodipine 10 mg - once daily for 30 days
+
+Directions: Avoid consuming milk or dairy within 2 hours of this dose.
+Follow-up: Follow-up consultation after 2 weeks.

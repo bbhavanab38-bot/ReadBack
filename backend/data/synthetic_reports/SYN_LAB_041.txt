@@ -1,0 +1,11 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_041
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+Triglycerides          115     mg/dL      Ref: (50 - 150) NORMAL
+TSH                    7.8     µIU/mL     Ref: (0.4 - 4.0) HIGH
+Serum Creatinine       1.0     mg/dL      Ref: (0.7 - 1.3) NORMAL
+Hemoglobin             17.5    g/dL       Ref: (12.0 - 16.0) HIGH
+
+RECOMMENDATION:
+Repeat Fasting Blood Glucose in 3 months.

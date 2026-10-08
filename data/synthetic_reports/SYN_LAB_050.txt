@@ -1,0 +1,7 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_050
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+TSH                    7.8     µIU/mL     Ref: (0.4 - 4.0) HIGH
+Fasting Blood Glucose  62      mg/dL      Ref: (70 - 99) LOW
+Platelets              260000  cells/µL   Ref: (150000 - 450000) NORMAL

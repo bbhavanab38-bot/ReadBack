@@ -1,0 +1,12 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_027
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+Total Cholesterol      175     mg/dL      Ref: (125 - 200) NORMAL
+Triglycerides          115     mg/dL      Ref: (50 - 150) NORMAL
+Platelets              260000  cells/µL   Ref: (150000 - 450000) NORMAL
+Hemoglobin             9.8     g/dL       Ref: (12.0 - 16.0) LOW
+HbA1c                  5.2     %          Ref: (4.0 - 5.6) NORMAL
+
+RECOMMENDATION:
+Follow-up consultation after 2 weeks.

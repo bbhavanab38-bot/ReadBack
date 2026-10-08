@@ -1,0 +1,11 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_003
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+Fasting Blood Glucose  148     mg/dL      Ref: (70 - 99) HIGH
+Total Cholesterol      110     mg/dL      Ref: (125 - 200) LOW
+HbA1c                  5.2     %          Ref: (4.0 - 5.6) NORMAL
+TSH                    2.1     µIU/mL     Ref: (0.4 - 4.0) NORMAL
+
+RECOMMENDATION:
+Repeat Fasting Blood Glucose in 3 months.

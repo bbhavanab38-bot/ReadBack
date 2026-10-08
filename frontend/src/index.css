@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-900 text-slate-100 font-sans antialiased;
+  }
+}
+
+/* Custom smooth transitions and animations */
+.glow-emerald {
+  box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.3);
+}
+
+.glow-rose {
+  box-shadow: 0 0 25px -5px rgba(244, 63, 94, 0.3);
+}
+
+.glow-brand {
+  box-shadow: 0 0 25px -5px rgba(12, 142, 233, 0.3);
+}
+
+/* Accessible focus styling */
+*:focus-visible {
+  outline: 3px solid #38bdf8;
+  outline-offset: 3px;
+}
+
+.elder-mode {
+  font-size: 1.25rem;
+  line-height: 1.65;
+}
+
+.elder-mode .text-xs,
+.elder-mode [class*="text-[10px]"],
+.elder-mode [class*="text-[11px]"] {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.elder-mode .text-sm {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.elder-mode button:not([role="switch"]) {
+  min-height: 3.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elder-mode *,
+  .elder-mode *::before,
+  .elder-mode *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

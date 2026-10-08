@@ -1,0 +1,7 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_010
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+Total Cholesterol      175     mg/dL      Ref: (125 - 200) NORMAL
+TSH                    2.1     µIU/mL     Ref: (0.4 - 4.0) NORMAL
+SGPT / ALT             6       U/L        Ref: (7 - 56) LOW

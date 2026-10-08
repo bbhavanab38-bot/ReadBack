@@ -1,0 +1,9 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_018
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+SGPT / ALT             6       U/L        Ref: (7 - 56) LOW
+TSH                    0.15    µIU/mL     Ref: (0.4 - 4.0) LOW
+Fasting Blood Glucose  88      mg/dL      Ref: (70 - 99) NORMAL
+HbA1c                  3.8     %          Ref: (4.0 - 5.6) LOW
+Serum Creatinine       1.0     mg/dL      Ref: (0.7 - 1.3) NORMAL

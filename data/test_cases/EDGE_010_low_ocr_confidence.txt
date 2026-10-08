@@ -1,0 +1,2 @@
+Report test: Hemoglobin 10.2 g/dL LOW.
+Edge type: low_ocr_confidence

@@ -1,0 +1,10 @@
+SYNTHETIC CLINIC OUTPATIENT PRESCRIPTION #SYN_RX_017
+Attending: Dr. Synthetic MD   Date: 2026-10-02
+Rx Medication Orders:
+--------------------------------------------------
+1. Tab. Amoxicillin 500 mg - twice daily for 30 days
+2. Tab. Levothyroxine 50 mcg - once daily in morning on empty stomach for 30 days
+3. Tab. Amlodipine 2.5 mg - once daily for 30 days
+
+Directions: Do not drink alcohol during treatment.
+Follow-up: Consult Cardiologist after 1 week.

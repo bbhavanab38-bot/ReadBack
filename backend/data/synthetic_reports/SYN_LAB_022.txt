@@ -1,0 +1,12 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_022
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+WBC                    14200   cells/µL   Ref: (4000 - 11000) HIGH
+Hemoglobin             14.2    g/dL       Ref: (12.0 - 16.0) NORMAL
+TSH                    2.1     µIU/mL     Ref: (0.4 - 4.0) NORMAL
+Serum Creatinine       1.0     mg/dL      Ref: (0.7 - 1.3) NORMAL
+Platelets              260000  cells/µL   Ref: (150000 - 450000) NORMAL
+
+RECOMMENDATION:
+Review after 1 month with treating physician.

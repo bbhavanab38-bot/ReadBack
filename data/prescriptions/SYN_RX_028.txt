@@ -1,0 +1,10 @@
+SYNTHETIC CLINIC OUTPATIENT PRESCRIPTION #SYN_RX_028
+Attending: Dr. Synthetic MD   Date: 2026-10-02
+Rx Medication Orders:
+--------------------------------------------------
+1. Tab. Levothyroxine 100 mcg - once daily in morning on empty stomach for 30 days
+2. Tab. Amoxicillin 250 mg - three times daily for 30 days
+3. Tab. Amlodipine 10 mg - once daily for 30 days
+
+Directions: Avoid consuming milk or dairy within 2 hours of this dose.
+Follow-up: Repeat Fasting Blood Glucose in 3 months.

@@ -1,0 +1,9 @@
+SYNTHETIC CLINIC OUTPATIENT PRESCRIPTION #SYN_RX_005
+Attending: Dr. Synthetic MD   Date: 2026-10-02
+Rx Medication Orders:
+--------------------------------------------------
+1. Tab. Amlodipine 5 mg - once daily for 30 days
+2. Tab. Lisinopril 5 mg - once daily in morning for 30 days
+3. Tab. Amoxicillin 500 mg - three times daily for 30 days
+
+Directions: Do not drink alcohol during treatment.

@@ -1,0 +1,10 @@
+SYNTHETIC DIAGNOSTIC REPORT #SYN_LAB_012
+Patient: SYNTHETIC_SUBJECT_ANON   Date: 2026-10-01
+Panel: Comprehensive Metabolic & Hematology Panel
+--------------------------------------------------
+Platelets              260000  cells/µL   Ref: (150000 - 450000) NORMAL
+SGPT / ALT             28      U/L        Ref: (7 - 56) NORMAL
+TSH                    2.1     µIU/mL     Ref: (0.4 - 4.0) NORMAL
+
+RECOMMENDATION:
+Consult Cardiologist after 1 week.
