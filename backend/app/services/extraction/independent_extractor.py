@@ -12,7 +12,12 @@ TERM_SYNONYMS = {
     "hba1c": ["hba1c", "glycated hemoglobin", "ಎಚ್‌ಬಿಎ1ಸಿ", "एचबीए1सी", "எச்பிஏ1சி"],
     "creatinine": ["creatinine", "serum creatinine", "ಕ್ರಿಯೇಟಿನೈನ್", "क्रिएटिनिन", "கிரியேட்டினின்"],
     "tsh": ["tsh", "thyroid stimulating hormone", "ಟಿಎಸ್‌ಎಚ್", "टीएसएच", "டிஎஸ்ஹெச்"],
-    "cholesterol": ["cholesterol", "total cholesterol", "ಕೊಲೆಸ್ಟ್ರಾಲ್", "कोलेस्ट्रॉल", "கொலஸ்ட்ரால்"]
+    # A bare "cholesterol" synonym would cross-match the LDL and HDL
+    # sentences, so each cholesterol fraction only matches its own marker.
+    "total cholesterol": ["total cholesterol", "ಕೊಲೆಸ್ಟ್ರಾಲ್", "कोलेस्ट्रॉल", "கொலஸ்ட்ரால்"],
+    "ldl cholesterol": ["ldl"],
+    "hdl cholesterol": ["hdl"],
+    "triglycerides": ["triglycerides", "triglyceride"]
 }
 
 # Known drugs
@@ -134,7 +139,8 @@ class IndependentExtractor:
         extracted_unit = None
         units = [
             "cells/cumm", "cells/µl", "cells/ul", "gm/dl", "mg/dl", "g/dl",
-            "µiu/ml", "miu/l", "iu/l", "u/l", "mg/l", "mcg/ml", "mg", "mcg",
+            "µiu/ml", "miu/l", "iu/l", "u/l", "mg/l", "mcg/ml", "mil/µl",
+            "mil/ul", "mg", "mcg",
             "µg", "ug", "ml", "%",
         ]
         for u in sorted(units, key=len, reverse=True):

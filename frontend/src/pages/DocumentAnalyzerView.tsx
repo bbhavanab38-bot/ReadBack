@@ -149,7 +149,7 @@ export const DocumentAnalyzerView: React.FC<DocumentAnalyzerViewProps> = ({
           </div>
         )}
 
-        {step === 3 && currentDocument && (
+        {!documentLoading && !documentLoadError && step === 3 && currentDocument && (
           <ExplanationSection
             document={currentDocument}
             onExplanationGenerated={handleExplanationReady}
@@ -163,7 +163,7 @@ export const DocumentAnalyzerView: React.FC<DocumentAnalyzerViewProps> = ({
           />
         )}
 
-        {step === 4 && currentDocument && currentDocument.verification_result && (
+        {!documentLoading && !documentLoadError && step === 4 && currentDocument && currentDocument.verification_result && (
           <VerificationReport
             result={currentDocument.verification_result}
             document={currentDocument}
@@ -176,7 +176,23 @@ export const DocumentAnalyzerView: React.FC<DocumentAnalyzerViewProps> = ({
           />
         )}
 
-        {step === 5 && currentDocument && currentDocument.next_step && (
+        {!documentLoading && !documentLoadError && step === 4 && currentDocument && !currentDocument.verification_result && (
+          <div role="status" className="rounded-2xl border border-amber-400/30 bg-amber-950/20 p-8 text-center">
+            <h2 className="text-lg font-bold text-white">Verification has not been run yet.</h2>
+            <p className="mt-1 text-sm text-slate-300">
+              Generate an explanation and verify it before viewing the verification report.
+            </p>
+            <button
+              type="button"
+              onClick={() => setStep(3)}
+              className="mt-5 inline-flex min-h-11 items-center rounded-xl bg-sky-500 px-5 font-semibold text-slate-950 hover:bg-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+            >
+              Back to Explanation
+            </button>
+          </div>
+        )}
+
+        {!documentLoading && !documentLoadError && step === 5 && currentDocument && currentDocument.next_step && (
           <VerifiedNextStepCard
             document={currentDocument}
             nextStep={currentDocument.next_step}
@@ -189,6 +205,22 @@ export const DocumentAnalyzerView: React.FC<DocumentAnalyzerViewProps> = ({
               });
             }}
           />
+        )}
+
+        {!documentLoading && !documentLoadError && step === 5 && currentDocument && !currentDocument.next_step && (
+          <div role="status" className="rounded-2xl border border-amber-400/30 bg-amber-950/20 p-8 text-center">
+            <h2 className="text-lg font-bold text-white">No verified next step is available.</h2>
+            <p className="mt-1 text-sm text-slate-300">
+              This document does not contain a next step that ReadBack could verify.
+            </p>
+            <button
+              type="button"
+              onClick={() => setStep(4)}
+              className="mt-5 inline-flex min-h-11 items-center rounded-xl bg-sky-500 px-5 font-semibold text-slate-950 hover:bg-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+            >
+              Back to Verification Report
+            </button>
+          </div>
         )}
       </div>
     </div>

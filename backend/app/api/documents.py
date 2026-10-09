@@ -173,9 +173,15 @@ async def upload_document(
                 detail="This document contains no readable text.",
             )
         
-        # Guess document type
+        # Guess document type. Lab markers are checked first: lab report PDFs
+        # can mention "prescription" in disclaimers, which must not override
+        # their actual laboratory content.
         low_t = raw_text.lower()
-        if "prescription" in low_t or "tab." in low_t or "rx" in low_t:
+        lab_markers = ["laboratory report", "complete blood count", "lipid profile", "reference range", "test name"]
+        rx_markers = ["prescription", "tab.", "rx"]
+        if any(marker in low_t for marker in lab_markers):
+            doc_type = "lab_report"
+        elif any(marker in low_t for marker in rx_markers):
             doc_type = "prescription"
         else:
             doc_type = "lab_report"

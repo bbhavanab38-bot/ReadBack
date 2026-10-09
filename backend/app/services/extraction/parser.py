@@ -9,6 +9,32 @@ class DocumentFactParser:
     Calculates confidence scores per field.
     """
 
+    # hdl/ldl must be checked before cholesterol so "LDL Cholesterol" is not
+    # mislabeled as "Total Cholesterol".
+    KNOWN_TESTS = [
+        ("hemoglobin", "Hemoglobin"),
+        ("wbc", "WBC"),
+        ("rbc", "RBC"),
+        ("platelets", "Platelets"),
+        ("platelet count", "Platelets"),
+        ("glucose", "Fasting Blood Glucose"),
+        ("blood sugar", "Fasting Blood Glucose"),
+        ("hba1c", "HbA1c"),
+        ("creatinine", "Serum Creatinine"),
+        ("tsh", "TSH"),
+        ("hdl", "HDL Cholesterol"),
+        ("ldl", "LDL Cholesterol"),
+        ("cholesterol", "Total Cholesterol"),
+        ("triglycerides", "Triglycerides"),
+        ("urea", "Blood Urea"),
+        ("sgot", "SGOT / AST"),
+        ("sgpt", "SGPT / ALT"),
+        ("bilirubin", "Total Bilirubin")
+    ]
+
+    # Tolerates comma-grouped thousands (e.g. 7,800 / 210,000)
+    _NUM = r'\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?'
+
     @classmethod
     def parse_document_text(
         cls,
@@ -19,6 +45,7 @@ class DocumentFactParser:
         facts: List[MedicalFact] = []
         unparsed: List[str] = []
         lines = [line.strip() for line in text.split("\n") if line.strip()]
+        lines = cls._merge_fragmented_lab_rows(lines)
 
         idx = 1
         for line in lines:
@@ -71,6 +98,49 @@ class DocumentFactParser:
         return next((page for page, text in page_texts.items() if source_text and source_text in text), 1)
 
     @classmethod
+    def _merge_fragmented_lab_rows(cls, lines: List[str]) -> List[str]:
+        """
+        PDF text extraction emits one table cell per line (name, value, range,
+        flag). Joins those cell runs into single logical rows so
+        _parse_lab_line can parse them.
+        """
+        merged: List[str] = []
+        i = 0
+        while i < len(lines):
+            line = lines[i]
+            if (
+                cls._is_lab_row_start(line)
+                and i + 1 < len(lines)
+                and cls._is_lab_result_cell(lines[i + 1])
+            ):
+                parts = [line]
+                j = i + 1
+                while j < len(lines) and len(parts) < 5 and cls._is_lab_result_cell(lines[j]):
+                    parts.append(lines[j])
+                    j += 1
+                merged.append(" ".join(parts))
+                i = j
+            else:
+                merged.append(line)
+                i += 1
+        return merged
+
+    @classmethod
+    def _is_lab_row_start(cls, line: str) -> bool:
+        if any(ch.isdigit() for ch in line):
+            return False
+        line_low = line.lower()
+        return any(key in line_low for key, _ in cls.KNOWN_TESTS)
+
+    @staticmethod
+    def _is_lab_result_cell(line: str) -> bool:
+        if len(line) > 40:
+            return False
+        if any(ch.isdigit() for ch in line):
+            return True
+        return bool(re.fullmatch(r'(CRITICAL|PANIC|ABNORMAL|LOW|HIGH|NORMAL)', line.strip(), re.IGNORECASE))
+
+    @classmethod
     def _parse_lab_line(cls, line: str, idx: int, ocr_boxes: Optional[List[Dict[str, Any]]]) -> Optional[MedicalFact]:
         # Regex for Lab line: Name Value Unit Range Flag
         # e.g., "Hemoglobin: 10.2 g/dL (12-16) LOW"
@@ -79,30 +149,9 @@ class DocumentFactParser:
             r'([A-Za-z\s\(\)]+?)[:\s]+(\d+(?:\.\d+)?)\s*([a-zA-Z/%µ\^]+)?(?:\s+(?:Ref|Range|Reference)?[:\s]*[\(\[]?(\d+(?:\.\d+)?\s*[-–]\s*\d+(?:\.\d+)?)[\)\]]?)?(?:\s+(LOW|HIGH|NORMAL|CRITICAL|ABNORMAL|L|H|N))?',
         ]
         
-        known_tests = [
-            ("hemoglobin", "Hemoglobin"),
-            ("wbc", "WBC"),
-            ("rbc", "RBC"),
-            ("platelets", "Platelets"),
-            ("platelet count", "Platelets"),
-            ("glucose", "Fasting Blood Glucose"),
-            ("blood sugar", "Fasting Blood Glucose"),
-            ("hba1c", "HbA1c"),
-            ("creatinine", "Serum Creatinine"),
-            ("tsh", "TSH"),
-            ("cholesterol", "Total Cholesterol"),
-            ("triglycerides", "Triglycerides"),
-            ("hdl", "HDL Cholesterol"),
-            ("ldl", "LDL Cholesterol"),
-            ("urea", "Blood Urea"),
-            ("sgot", "SGOT / AST"),
-            ("sgpt", "SGPT / ALT"),
-            ("bilirubin", "Total Bilirubin")
-        ]
-
         line_low = line.lower()
         matched_test = None
-        for key, name in known_tests:
+        for key, name in cls.KNOWN_TESTS:
             if key in line_low:
                 matched_test = name
                 break
@@ -110,37 +159,46 @@ class DocumentFactParser:
         if not matched_test:
             return None
 
-        # Extract number
-        nums = re.findall(r'(\d+(?:\.\d+)?)', line)
+        # Extract number (tolerates comma-grouped thousands, e.g. 7,800)
+        nums = re.findall(cls._NUM, line)
         if not nums:
             return None
-        val = float(nums[0])
+        val = float(nums[0].replace(",", ""))
 
-        # Extract unit
+        # Extract unit. Longer units must be checked first: "g/dl" is a
+        # substring of "mg/dl", so "mg/dL" must come before "g/dL".
         unit = None
-        for u in ["g/dL", "mg/dL", "cells/µL", "cells/ul", "cells/cumm", "µIU/mL", "mIU/L", "U/L", "mg/L", "%", "mil/µL", "mil/ul"]:
+        for u in ["mg/dL", "g/dL", "cells/µL", "cells/ul", "cells/cumm", "µIU/mL", "mIU/L", "U/L", "mg/L", "%", "mil/µL", "mil/ul"]:
             if u.lower() in line_low:
                 unit = u
                 break
 
-        # Extract reference range
-        ref_match = re.search(r'(\d+(?:\.\d+)?\s*[-–to ]+\s*\d+(?:\.\d+)?)', line)
-        ref_range = ref_match.group(1).replace(" ", "") if ref_match and ref_match.group(1) != str(val) else None
+        # Extract reference range. Comma-tolerant so PDF values like
+        # "4,000 - 11,000" or en-dash "12.0–16.0" parse correctly.
+        ref_range = None
+        ref_match = re.search(
+            rf'({cls._NUM})\s*[-–to ]+\s*({cls._NUM})',
+            line.replace(",", ""),
+        )
+        if ref_match:
+            ref_range = f"{ref_match.group(1)}-{ref_match.group(2)}"
+        else:
+            ineq_match = re.search(rf'([<>≤≥])\s*({cls._NUM})', line.replace(",", ""))
+            if ineq_match:
+                ref_range = f"{ineq_match.group(1)}{ineq_match.group(2)}"
 
-        # Extract flag
+        # Extract flag. Single-letter L/H/N are excluded so units like "U/L"
+        # are not mistaken for a LOW flag.
         flag = FlagType.NONE
-        flag_match = re.search(r"\b(CRITICAL|PANIC|ABNORMAL|LOW|HIGH|NORMAL|L|H|N)\b", line, re.IGNORECASE)
+        flag_match = re.search(r"\b(CRITICAL|PANIC|ABNORMAL|LOW|HIGH|NORMAL)\b", line, re.IGNORECASE)
         if flag_match:
             flag = {
                 "CRITICAL": FlagType.CRITICAL,
                 "PANIC": FlagType.CRITICAL,
                 "ABNORMAL": FlagType.ABNORMAL,
                 "LOW": FlagType.LOW,
-                "L": FlagType.LOW,
                 "HIGH": FlagType.HIGH,
-                "H": FlagType.HIGH,
                 "NORMAL": FlagType.NORMAL,
-                "N": FlagType.NORMAL,
             }[flag_match.group(1).upper()]
 
         # Assign confidence based on clarity and completeness

@@ -67,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         : 'bg-slate-900/95 border-slate-600 text-white'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex min-h-16 flex-wrap items-center justify-between gap-x-4 gap-y-2 py-2">
           {/* Logo & Brand */}
           <button
             type="button"
@@ -94,7 +94,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
 
           {/* Navigation Links */}
-          <nav aria-label={activeTab === 'analyze' ? 'Document workflow' : 'Main navigation'} className="flex items-center gap-1 overflow-x-auto whitespace-nowrap px-1">
+          <nav aria-label={activeTab === 'analyze' ? 'Document workflow' : 'Main navigation'} className="flex min-w-0 items-center gap-1 overflow-x-auto whitespace-nowrap px-1">
             {activeTab === 'analyze' ? (
               [
                 { num: 1, label: 'Upload', Icon: Upload },
